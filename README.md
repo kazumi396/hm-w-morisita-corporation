@@ -11,7 +11,7 @@ Figma のデザインカンプをもとに、**レスポンシブ対応の静的
 
 ## 公開 URL
 
-🔗 [デモページを見る] [https://preview.o0o0.jp/morisita_wp/](https://preview.o0o0.jp/morisita_wp/)
+🔗 [デモページを見る] [https://kpeacemkm.sakura.ne.jp/portfolio/morisita_corporation/](https://kpeacemkm.sakura.ne.jp/portfolio/morisita_corporation/)
 
 ## 使用技術
 
