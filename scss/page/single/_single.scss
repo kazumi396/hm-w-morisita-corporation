@@ -1,0 +1,105 @@
+@use "../../global" as g;
+
+/*!
+page > single
+------------------------------
+*/
+.single-content > *:not(:first-child) {
+  margin-top: 16rem;
+}
+
+.single-content {
+  h2 {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    @include g.mq() {
+      font-size: 24rem;
+      line-height: 1.46;
+    }
+  }
+
+  h3 {
+    font-size: 18rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    @include g.mq() {
+      font-size: 20rem;
+    }
+  }
+
+  p {
+    font-size: 15rem;
+    font-weight: 500;
+    line-height: 1.9;
+    @include g.mq() {
+      font-size: 16rem;
+    }
+  }
+
+  h3 + p {
+    font-weight: 700;
+  }
+
+  li {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.9;
+    @include g.mq() {
+      font-size: 16rem;
+    }
+  }
+
+  ul > li {
+    position: relative;
+    padding-left: 20rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 10rem;
+      left: 0;
+      width: 8rem;
+      height: 8rem;
+      background-color: var(--color-bg-base);
+      border-radius: 100vh;
+    }
+  }
+
+  ol {
+    list-style: decimal-leading-zero;
+    padding-left: 22rem;
+  }
+
+  ol > li {
+    margin-left: 12rem;
+    font-size: 16rem;
+    &::marker {
+      font-family: var(--font-family-en);
+      font-size: 20rem;
+      color: var(--color-font-primary);
+    }
+  }
+
+  a {
+    display: block;
+    font-size: 15rem;
+    font-weight: 500;
+    line-height: 1.9;
+    color: var(--color-other-link);
+    text-decoration: underline;
+  }
+}
+
+.single-link {
+  margin-top: 80rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.single-link a {
+  width: 144rem;
+}

@@ -1,0 +1,95 @@
+@use "../../global" as g;
+
+/*!
+page > access
+------------------------------
+*/
+.access-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 39rem;
+  @include g.mq() {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 39rem;
+    row-gap: 72rem;
+  }
+}
+
+.access-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+
+  &:not(:last-child) {
+    padding-bottom: 39rem;
+    border-bottom: 1px solid var(--color-sep-light-gray);
+  }
+  @include g.mq() {
+    &:not(:last-child) {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    &:nth-child(1) {
+      grid-column: 1/-1;
+      gap: 24rem;
+      .access-map iframe {
+        aspect-ratio: 1000 / 408;
+      }
+      .access-item-info {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.access-item-info,
+.access-item-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.access-item-info {
+  gap: 16rem;
+}
+
+.access-item-meta {
+  gap: 8rem;
+}
+
+.access-item-name {
+  font-size: 20rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 24rem;
+    line-height: 1.46;
+  }
+}
+
+.access-item-address {
+  line-height: 1.9;
+  @include g.mq() {
+    line-height: 1.5;
+  }
+}
+
+.access-item-link {
+  width: 200rem;
+}
+
+.access-map iframe {
+  aspect-ratio: 340 / 226;
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 32rem;
+  vertical-align: bottom;
+
+  @include g.mq() {
+    aspect-ratio: 480 / 320;
+    border-bottom-left-radius: 56rem;
+  }
+}

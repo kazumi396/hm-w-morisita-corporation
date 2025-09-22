@@ -1,0 +1,84 @@
+@use "../global" as g;
+
+/*!
+component > single-kv
+------------------------------
+*/
+.c-single-kv-wrapper {
+  height: auto;
+  @include g.mq() {
+    padding-bottom: 32rem;
+  }
+}
+
+.c-single-kv {
+  padding-top: 266rem;
+  background-color: var(--color-bg-lightest-blue);
+  position: relative;
+  @include g.mq() {
+    padding-top: 119rem;
+  }
+}
+
+.c-single-kv-inner {
+  padding-top: 25rem;
+  padding-bottom: 40rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  @include g.mq() {
+    padding-top: 64rem;
+    padding-bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 308rem;
+  }
+}
+
+.c-single-kv-text {
+  margin-top: 19rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12rem;
+  width: 100%;
+  height: auto;
+  @include g.mq() {
+    margin-top: 26rem;
+    max-width: 760rem;
+  }
+}
+
+.c-single-kv-title {
+  font-size: 28rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 44rem;
+  }
+}
+
+.c-single-kv-image {
+  position: absolute;
+  top: 121rem;
+  left: 20rem;
+  aspect-ratio: 338 / 169;
+  max-width: 338rem;
+  @include g.mq() {
+    top: 185rem;
+    right: 70rem;
+    left: auto;
+    aspect-ratio: 484 / 323;
+    max-width: 484rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-left-radius: 56rem;
+    border: 1px solid var(--color-sep-light-gray);
+  }
+}

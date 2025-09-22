@@ -1,0 +1,24 @@
+@use "../global" as g;
+
+/*!
+component > sub-kv
+------------------------------
+*/
+.c-sub-kv {
+  padding-top: 121rem;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 46rem;
+  background-color: var(--color-bg-lightest-blue);
+  @include g.mq() {
+    padding-top: 183rem;
+    padding-bottom: 99rem;
+  }
+}
+
+.c-kv-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12rem;
+}

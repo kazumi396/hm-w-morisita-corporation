@@ -1,0 +1,68 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-news
+------------------------------
+*/
+.top-news {
+  margin: -32rem 0 0 20rem;
+  background-color: var(--color-bg-white);
+  padding: 64rem 20rem;
+  border-top-left-radius: 32rem;
+  max-width: 1370rem;
+  @include g.mq() {
+    margin: -32rem 0 0 70rem;
+    padding: 64rem 80rem;
+    border-top-left-radius: 56rem;
+  }
+}
+
+.top-news-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40rem;
+  @include g.mq() {
+    flex-direction: row;
+    gap: 80rem;
+  }
+}
+
+.top-news-title {
+  width: 100%;
+  max-width: 200rem;
+  gap: 8rem;
+}
+
+.top-news-title-en {
+  font-size: 40rem;
+}
+
+.top-news-title-ja {
+  font-size: 15rem;
+  color: var(--color-font-light-base);
+}
+
+.top-news-list {
+  width: 100%;
+
+  h3 {
+    font-weight: 500;
+  }
+}
+
+.top-news-button-wrapper {
+  text-align: right;
+  @include g.mq() {
+    width: 200rem;
+    margin-top: -43rem;
+  }
+}
+
+.top-news-button {
+  width: 200rem;
+  margin-left: auto;
+  margin-top: 40rem;
+  @include g.mq() {
+    margin-top: -51rem;
+  }
+}

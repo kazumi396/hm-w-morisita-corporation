@@ -1,0 +1,32 @@
+@use "../../global" as g;
+
+/*!
+page > news
+------------------------------
+*/
+.news {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80rem;
+
+  .news-sidebar {
+    order: 2;
+  }
+
+  .news-list {
+    order: 1;
+  }
+
+  @include g.mq() {
+    grid-template-columns: 240rem auto;
+
+    .news-sidebar {
+      position: static;
+      order: 0;
+    }
+
+    .news-list {
+      order: 0;
+    }
+  }
+}

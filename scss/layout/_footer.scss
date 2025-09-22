@@ -1,0 +1,238 @@
+@use "../global" as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+.l-footer {
+  position: relative;
+  margin-top: -40rem;
+  padding: 80rem 0;
+  background-color: var(--color-bg-darkblue);
+  color: var(--color-white);
+  border-top-left-radius: 32rem;
+  border-top-right-radius: 32rem;
+  display: flex;
+  flex-direction: column;
+  @include g.mq() {
+    border-top-left-radius: 56rem;
+    border-top-right-radius: 56rem;
+  }
+}
+
+.l-footer-button {
+  display: grid;
+  place-items: center;
+  width: 80rem;
+  height: 80rem;
+  background-color: var(--color-bg-darkblue);
+  border: 1px solid var(--color-bg-darkblue);
+  border-radius: 50%;
+  position: absolute;
+  top: -16rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+
+  span {
+    width: 14rem;
+    height: 17rem;
+    mask-image: url(../img/icon-footer.svg);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: var(--color-bg-white);
+    transition: background-color 0.3s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-bg-white);
+      border: 1px solid var(--color-bg-darkblue);
+
+      span {
+        background-color: var(--color-bg-darkblue);
+      }
+    }
+  }
+}
+
+.l-footer-inner {
+  @include g.mq() {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.l-footer-info {
+  text-align: center;
+  @include g.mq() {
+    text-align: left;
+  }
+}
+
+.l-footer-logo {
+  width: 160rem;
+  margin-inline: auto;
+  @include g.mq() {
+    width: 247rem;
+    margin-left: 0;
+  }
+}
+
+.l-footer-meta {
+  margin-top: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.l-footer-address {
+  font-size: 13rem;
+}
+
+.l-footer-contact {
+  span {
+    &:first-child {
+      font-size: 13rem;
+    }
+    &:last-child {
+      font-family: var(--font-family-en);
+      font-size: 21rem;
+      font-weight: 400;
+      margin-left: 8rem;
+      @include g.mq() {
+        line-height: 1.14;
+      }
+    }
+  }
+}
+
+.l-footer-copyright {
+  margin-top: 56rem;
+  display: block;
+  text-align: center;
+  font-family: var(--font-family-en);
+  font-size: 13rem;
+  font-weight: 400;
+  @include g.mq() {
+    text-align: left;
+    margin-top: 121rem;
+  }
+}
+
+.l-footer-disclaimer {
+  margin-top: 16rem;
+  font-size: 11rem;
+  text-align: center;
+}
+
+.l-footer-disclaimer-br {
+  @include g.mq() {
+    display: none;
+  }
+}
+
+.l-footer-navgroup {
+  display: none;
+  @include g.mq() {
+    display: flex;
+    gap: 96rem;
+  }
+}
+
+.l-footer-nav,
+.l-footer-nav02,
+.l-footer-nav03,
+.l-footer-nav-sub {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-footer-nav {
+  @include g.mq() {
+    .l-footer-item:not(:first-child) {
+      margin-top: 16rem;
+    }
+    .l-footer-item--home {
+      margin-bottom: 24rem;
+    }
+  }
+}
+
+.l-footer-nav02 {
+  gap: 40rem;
+}
+
+.l-footer-nav03 {
+  gap: 24rem;
+}
+
+.l-footer-item a {
+  font-size: 15rem;
+  position: relative;
+
+  &::after {
+    background-color: var(--color-bg-white);
+    opacity: 0.8;
+    padding-top: 1px;
+    content: "";
+    width: 100%;
+    height: 0.5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform-origin: left top;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover::after {
+      transform-origin: left top;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.l-footer-item span {
+  font-size: 15rem;
+}
+
+.l-footer-nav-sub {
+  margin-top: 16rem;
+  gap: 4rem;
+  width: 100%;
+}
+
+.l-footer-nav-sub a {
+  display: flex;
+  font-size: 13rem;
+  position: relative;
+  width: auto;
+  @include g.mq() {
+    display: inline-block;
+  }
+
+  &::after {
+    background-color: var(--color-bg-white);
+    opacity: 0.8;
+    padding-top: 1px;
+    content: "";
+    width: 100%;
+    height: 0.5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform-origin: left top;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover::after {
+      transform-origin: left top;
+      transform: scaleX(1);
+    }
+  }
+}

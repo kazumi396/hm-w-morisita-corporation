@@ -1,0 +1,79 @@
+@use "../global" as g;
+
+/*!
+component > button
+------------------------------
+*/
+.c-button {
+  font-family: var(--font-family-en);
+  font-size: 16rem;
+  font-weight: 400;
+  line-height: 1.188;
+  color: var(--color-font-base);
+  background-color: var(--color-bg-lightest-blue);
+  padding: 15rem 23rem;
+  border-radius: 100vh;
+  border: 1px solid var(--color-white);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 200rem;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-bg-base);
+      .c-button-icon {
+        background-color: var(--color-bg-white);
+      }
+    }
+  }
+
+  &--gray {
+    background-color: var(--color-bg-light-grey);
+  }
+}
+
+.c-button.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  width: 144rem;
+}
+
+.c-button-icon {
+  display: block;
+  width: 9rem;
+  height: 11rem;
+  mask-image: url(../img/icon-button-arrow.svg);
+  mask-position: center;
+  mask-size: cover;
+  background-color: var(--color-bg-base);
+  transition: all 0.3s ease;
+}
+
+.c-button--reverse {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: end;
+  .c-button-icon {
+    order: -1;
+    transform: rotate(180deg);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .c-button-icon {
+        background-color: var(--color-bg-white);
+      }
+    }
+  }
+}
+
+.c-button--large {
+  font-size: 18rem;
+  padding: 23rem 31rem;
+  max-width: 272rem;
+}

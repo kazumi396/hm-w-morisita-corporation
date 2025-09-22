@@ -1,0 +1,26 @@
+@use "../global" as g;
+
+/*!
+utility > utility
+------------------------------
+*/
+.u-ptb {
+  padding: 80rem 0 !important;
+
+  @include g.mq() {
+    padding: 120rem 0 !important;
+  }
+}
+
+.u-visually-hidden {
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  padding: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  margin: -1rem !important;
+}

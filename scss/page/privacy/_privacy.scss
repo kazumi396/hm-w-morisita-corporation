@@ -1,0 +1,51 @@
+@use "../../global" as g;
+
+/*!
+page > privacy
+------------------------------
+*/
+.privacy-wrapper {
+  li {
+    font-weight: 500;
+  }
+
+  .privacy-content > *:not(:first-child) {
+    margin-top: 16rem;
+    line-height: 1.9;
+  }
+
+  .privacy-content {
+    h2 {
+      font-size: 20rem;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+      @include g.mq() {
+        font-size: 24rem;
+        line-height: 1.46;
+      }
+    }
+
+    ol {
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+
+  .privacy-content ol > li {
+    position: relative;
+    counter-increment: number;
+    padding-left: 22rem;
+  }
+
+  .privacy-content ol > li::before {
+    content: counter(number) ".";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16rem;
+  }
+}

@@ -1,0 +1,149 @@
+@use "../global" as g;
+
+/*!
+component > cta
+------------------------------
+*/
+.c-cta {
+  padding: 88rem 0 96rem 0;
+  border-top-left-radius: 32rem;
+  border-top-right-radius: 32rem;
+  background-color: var(--color-bg-lightest-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  @include g.mq() {
+    padding: 134rem 0 127rem 0;
+    border-top-left-radius: 56rem;
+    border-top-right-radius: 56rem;
+  }
+}
+
+.c-cta-marquee {
+  display: flex;
+  white-space: nowrap;
+  position: absolute;
+  top: 72%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.c-cta-marquee span {
+  animation: flowing 20s linear infinite;
+  display: inline-block;
+  font-family: var(--font-family-en);
+  font-size: 120rem;
+  color: rgba(30, 74, 164, 0.0713);
+  @include g.mq() {
+    font-size: 176rem;
+  }
+}
+
+@keyframes flowing {
+  from {
+    transform: translateX(0) translateY(-50%);
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.c-cta-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (any-hover: hover) {
+    &:hover .c-cta-inner {
+      scale: 0.9;
+    }
+
+    &:hover .c-cta-inner-sub {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+}
+
+.c-cta-inner {
+  border: 1px solid var(--color-bg-base);
+  width: 240rem;
+  height: 240rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: var(--z-index-cta);
+  transition: all 0.3s ease;
+  @include g.mq() {
+    width: 308rem;
+    height: 308rem;
+  }
+}
+
+.c-cta-inner-sub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 218rem;
+  height: 218rem;
+  border-radius: 50%;
+  background: var(--color-bg-cta);
+  z-index: 0;
+  transition: all 0.3s ease;
+  @include g.mq() {
+    width: 280rem;
+    height: 280rem;
+  }
+}
+
+.c-cta-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8rem;
+  color: var(--color-white);
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: color 0.3s;
+  z-index: 1;
+  cursor: pointer;
+
+  @include g.mq() {
+    gap: 16rem;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.c-cta-link-en {
+  font-family: var(--font-family-en);
+  font-size: 32rem;
+  font-weight: 400;
+  line-height: 1.16;
+  text-transform: uppercase;
+  @include g.mq() {
+    font-size: 40rem;
+  }
+}
+
+.c-cta-link-ja {
+  font-size: 15rem;
+  font-weight: 500;
+}

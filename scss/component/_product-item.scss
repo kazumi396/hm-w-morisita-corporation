@@ -1,0 +1,125 @@
+@use "../global" as g;
+
+/*!
+component > product-item
+------------------------------
+*/
+.c-product-item {
+  width: 100%;
+  max-width: 160rem;
+  @include g.mq() {
+    max-width: 404rem;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    transition: transform 0.3s ease;
+    @include g.mq() {
+      gap: 16rem;
+    }
+  }
+}
+
+.c-product-item-wrapper {
+  aspect-ratio: 160 / 107;
+  object-fit: cover;
+  border-bottom-left-radius: 24rem;
+  border: 1px solid var(--color-other-border-product);
+  overflow: hidden;
+  @include g.mq() {
+    aspect-ratio: 404 / 269;
+    border-bottom-left-radius: 32rem;
+  }
+
+  img {
+    position: relative;
+    z-index: var(--z-index-business);
+    transition: transform 0.3s ease;
+  }
+}
+
+.c-product-item-wrapper--top {
+  border-bottom-left-radius: 32rem;
+}
+
+.c-product-item a {
+  @media (any-hover: hover) {
+    &:hover .c-product-item-wrapper img {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.c-product-item--top {
+  max-width: 300rem;
+
+  @include g.mq() {
+    max-width: 404rem;
+  }
+
+  img {
+    border: none;
+  }
+
+  a {
+    gap: 16rem;
+  }
+}
+
+.c-product-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include g.mq() {
+    gap: 8rem;
+  }
+
+  &--top {
+    gap: 8rem;
+  }
+}
+
+.c-product-item-tag,
+.c-product-item-name {
+  &--top {
+    color: var(--color-white);
+  }
+}
+
+.c-product-item-tag {
+  display: inline-block;
+  font-size: 13rem;
+  padding: 1rem 7rem;
+  border: 1px solid var(--color-font-base);
+  border-radius: 16rem;
+  align-self: flex-start;
+  @include g.mq() {
+    font-size: 16rem;
+  }
+
+  &--top {
+    font-size: 16rem;
+    border: 1px solid var(--color-white);
+  }
+}
+
+.c-product-item-name {
+  font-size: 15rem;
+  line-height: 1.45;
+
+  font-weight: 500;
+  @include g.mq() {
+    font-size: 20rem;
+    letter-spacing: 0.05em;
+  }
+
+  &--top {
+    font-size: 18rem;
+    letter-spacing: 0.05em;
+    @include g.mq() {
+      font-size: 20rem;
+    }
+  }
+}

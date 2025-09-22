@@ -1,0 +1,97 @@
+@use "../global" as g;
+
+/*!
+component > sidebar
+------------------------------
+*/
+.c-sidebar {
+  max-width: 340prem;
+  @include g.mq() {
+    max-width: 240rem;
+    position: sticky;
+    align-self: flex-start;
+    top: 100rem;
+  }
+}
+
+.c-sidebar-nav,
+.c-sidebar-title,
+.c-sidebar-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-sidebar-nav {
+  width: 100%;
+  gap: 32rem;
+}
+
+.c-sidebar-title {
+  gap: 8rem;
+}
+
+.c-sidebar-title-en {
+  font-family: var(--font-family-en);
+  color: var(--color-font-primary);
+  font-size: 40rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.c-sidebar-title-ja {
+  color: var(--color-font-light-base);
+  font-size: 15rem;
+  font-weight: 500;
+  line-height: 1.47;
+}
+
+.c-sidebar-list {
+  gap: 16rem;
+}
+
+.c-sidebar-item {
+  color: var(--color-font-base);
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--current {
+    .c-sidebar-item--en,
+    .c-sidebar-item--ja {
+      opacity: 1;
+    }
+  }
+}
+
+.c-sidebar-item-icon {
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  mask-image: url(../img/icon-button-arrow.svg);
+  mask-position: center;
+  mask-size: cover;
+  background-color: var(--color-bg-base);
+  transition: all 0.3s ease;
+}
+
+.c-sidebar-item--en {
+  font-family: var(--font-family-en);
+  font-size: 19rem;
+  line-height: 1.158;
+  opacity: 0.5;
+}
+
+.c-sidebar-item--ja {
+  font-size: 16rem;
+  line-height: 1.5;
+  opacity: 0.5;
+}
+
+.c-sidebar-item.is-active {
+  .c-sidebar-item--en,
+  .c-sidebar-item--ja {
+    opacity: 1;
+  }
+}

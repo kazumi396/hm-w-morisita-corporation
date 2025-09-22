@@ -1,0 +1,216 @@
+@use "../global" as g;
+
+/*!
+component > business
+------------------------------
+*/
+.c-business-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80rem;
+  @include g.mq() {
+    padding-bottom: 81rem;
+  }
+}
+
+.c-business-title-en {
+  font-family: var(--font-family-en);
+  font-size: 16rem;
+  line-height: 1.19;
+  font-weight: 400;
+  color: var(--color-font-primary);
+  text-transform: uppercase;
+  @include g.mq() {
+    font-size: 20rem;
+    line-height: 1.15;
+  }
+}
+
+.c-business-title-ja {
+  font-size: 24rem;
+  line-height: 1.46;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 32rem;
+    line-height: 1.44;
+  }
+}
+
+.c-business-message {
+  margin-top: 16rem;
+  font-size: 16rem;
+  font-weight: 500;
+  line-height: 2;
+  @include g.mq() {
+    margin-top: 24rem;
+    line-height: 1.9;
+  }
+}
+
+.c-business-list-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rem;
+  font-size: 16rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.44;
+
+  @include g.mq() {
+    font-size: 18rem;
+    line-height: 1.5;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 21rem;
+    height: 21rem;
+    border-radius: 50%;
+    background-color: var(--color-bg-base);
+    background-image: url(../img/business/icon-business-list.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+
+    @include g.mq() {
+      width: 27rem;
+      height: 27rem;
+    }
+  }
+}
+
+.c-business-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16rem;
+  @include g.mq() {
+    grid-template-columns: 240rem 1fr;
+    gap: 32rem;
+  }
+}
+
+.c-business-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10rem;
+
+  h3 {
+    font-size: 18rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.44;
+    @include g.mq() {
+      font-size: 24rem;
+      line-height: 1.46;
+    }
+  }
+
+  p {
+    font-size: 15rem;
+    line-height: 1.9;
+    @include g.mq() {
+      font-size: 16rem;
+    }
+  }
+
+  @include g.mq() {
+  }
+}
+
+.c-business-card-image {
+  width: 100%;
+  max-width: 340rem;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-bottom-left-radius: 40rem;
+  order: -1;
+  @include g.mq() {
+    max-width: 240rem;
+    aspect-ratio: 24 / 16;
+  }
+}
+
+.c-business-flow-item {
+  display: grid;
+  grid-template-columns: 100rem 1fr;
+  gap: 16rem;
+  align-items: start;
+
+  @include g.mq() {
+    grid-template-columns: 150rem 1fr;
+    gap: 32rem;
+  }
+}
+
+.c-business-flow-icon {
+  width: 100rem;
+  height: 100rem;
+  border-radius: 100vh;
+  background-color: var(--color-bg-lightest-blue);
+  display: grid;
+  place-items: center;
+
+  @include g.mq() {
+    width: 150rem;
+    height: 150rem;
+  }
+
+  img {
+    width: 80rem;
+    height: 80rem;
+
+    @include g.mq() {
+      width: 134rem;
+      height: 134rem;
+    }
+  }
+}
+
+.c-business-flow-textarea {
+  margin-top: -3rem;
+}
+
+.c-business-flow-number {
+  font-family: var(--font-family-en);
+  font-size: 16rem;
+  font-weight: 400;
+  line-height: 1.19;
+  letter-spacing: 0.05em;
+  color: var(--color-font-primary);
+
+  @include g.mq() {
+    font-size: 24rem;
+    line-height: 1.17;
+  }
+}
+
+.c-business-flow-title {
+  font-size: 18rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.44;
+
+  @include g.mq() {
+    font-size: 24rem;
+    line-height: 1.46;
+  }
+}
+
+.c-business-flow-text {
+  margin-top: 3rem;
+  font-size: 14rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.43;
+
+  @include g.mq() {
+    margin-top: 10rem;
+    font-size: 16rem;
+    letter-spacing: 0;
+    line-height: 1.9;
+  }
+}

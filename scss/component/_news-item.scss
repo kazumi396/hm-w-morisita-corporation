@@ -1,0 +1,56 @@
+@use "../global" as g;
+
+/*!
+component > news-item
+------------------------------
+*/
+.c-news-item {
+  border-bottom: 1px solid var(--color-sep-light-gray);
+  transition: color 0.3s;
+  &:first-child {
+    border-top: 1px solid var(--color-sep-light-gray);
+  }
+
+  a {
+    padding: 20rem 16rem;
+    @include g.mq() {
+      padding: 32rem 16rem;
+    }
+  }
+}
+
+.c-news-item-link {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8rem;
+  transition: all 0.3s;
+  @include g.mq() {
+    flex-direction: row;
+    align-items: center;
+    gap: 16rem;
+  }
+
+  a {
+    padding: 0 16rem;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-font-primary);
+      background-color: var(--color-bg-lightest-blue);
+    }
+  }
+}
+
+.c-news-item-date {
+  font-family: var(--font-family-en);
+  font-size: 17rem;
+  font-weight: 400;
+  line-height: 1.17;
+  width: 120rem;
+}
+
+.c-news-item-title {
+  line-height: 1.86;
+}

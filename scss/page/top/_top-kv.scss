@@ -1,0 +1,178 @@
+@use "../../global" as g;
+
+.top-kv {
+  z-index: var(--z-index-top-kv);
+  position: relative;
+  height: 680rem;
+
+  @include g.mq() {
+    height: 800rem;
+  }
+}
+
+.top-kv-list {
+  height: 680rem;
+
+  @include g.mq() {
+    height: 800rem;
+  }
+}
+
+.splide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-kv-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 20rem 104rem 20rem;
+  background: var(--color-other-bg-overlay);
+  display: flex;
+  align-items: flex-end;
+  @include g.mq() {
+    padding: 0 70rem 104rem 70rem;
+  }
+}
+
+.top-kv-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  color: var(--color-white);
+  span {
+    display: block;
+  }
+  @include g.mq() {
+    gap: 24rem;
+  }
+}
+
+.top-kv-text-ja {
+  font-size: 30rem;
+  line-height: 1.45;
+
+  @include g.mq() {
+    font-size: 55rem;
+  }
+}
+
+.top-kv-text-en {
+  opacity: 0.68;
+  font-family: var(--font-family-en);
+  font-size: 18rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  @include g.mq() {
+    font-size: 20rem;
+    line-height: 1.7;
+  }
+}
+
+// Splideのpaginationを表示
+.splide__pagination {
+  visibility: visible;
+  position: absolute;
+  top: auto;
+  bottom: 390rem;
+  left: 20rem;
+  z-index: 10;
+  counter-reset: pagination-num;
+  @include g.mq() {
+    top: auto;
+    bottom: 255rem;
+    left: auto;
+    right: 170rem;
+    transform: translateX(-50%);
+  }
+}
+
+.splide__pagination__page {
+  width: 104rem;
+  height: 104rem;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-family-en);
+  font-size: 25.64rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 53%;
+  opacity: 1;
+
+  & .progress-ring {
+    width: 104rem;
+    height: 104rem;
+    display: block;
+  }
+
+  @include g.mq() {
+    width: 146rem;
+    height: 146rem;
+    font-size: 36rem;
+    top: 50%;
+
+    & .progress-ring {
+      width: 146rem;
+      height: 146rem;
+    }
+  }
+
+  // カウンター番号を表示
+  &:before {
+    counter-increment: pagination-num;
+    content: counter(pagination-num, decimal-leading-zero);
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    position: absolute;
+  }
+
+  // アクティブ状態のスタイル
+  &.is-active {
+    transform: scale(1);
+    background: transparent;
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  // 非アクティブ状態のページネーションを非表示（visibilityで隠す）
+  &:not(.is-active) {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.progress-ring__background {
+  stroke: var(--color-white);
+  opacity: 0.3;
+}
+
+.progress-ring__circle {
+  stroke: var(--color-white);
+  opacity: 1;
+  transition: stroke-dashoffset 0.3s linear;
+  stroke-dashoffset: 446.1;
+}
+
+.splide__track,
+.splide__list,
+.splide__slide:first-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.splide__pagination {
+  visibility: visible;
+  opacity: 1;
+  transition: none;
+}

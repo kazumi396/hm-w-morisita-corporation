@@ -1,0 +1,134 @@
+@use "../global" as g;
+
+/*!
+component > table
+------------------------------
+*/
+.c-table-wrap {
+  margin-top: 51rem;
+
+  @include g.mq() {
+    margin-top: 48rem;
+  }
+
+  &--company {
+    margin-top: 40rem;
+    @include g.mq() {
+      margin-top: 56rem;
+    }
+  }
+  &--news {
+    margin-top: 0;
+  }
+}
+
+.c-table-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 24rem 0;
+  border-top: 1px solid var(--color-sep-gray-333-10);
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-sep-gray-333-10);
+  }
+
+  @include g.mq() {
+    grid-template-columns: 224rem 1fr;
+    gap: 0;
+    padding: 31.5rem 0;
+    align-items: baseline;
+  }
+
+  &--news {
+    gap: 8rem;
+    transition: color 0.3s;
+    border-top: 1px solid var(--color-sep-light-gray);
+    &:last-child {
+      border-bottom: 1px solid var(--color-sep-light-gray);
+    }
+    @include g.mq() {
+      grid-template-columns: 1fr;
+    }
+
+    a {
+      padding: 19rem 0 19rem 16rem;
+      display: grid;
+      gap: 8rem;
+      transition: color 0.3s;
+
+      @include g.mq() {
+        padding: 31rem 0 31rem 16rem;
+        grid-template-columns: 120rem 1fr;
+        gap: 16rem;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--color-font-primary);
+        }
+      }
+    }
+  }
+
+  &--company {
+    @include g.mq() {
+      grid-template-columns: 160rem 1fr;
+      gap: 0;
+    }
+  }
+}
+
+.c-table-header {
+  font-size: 15rem;
+  font-weight: 700;
+  line-height: 1.47;
+  width: 160rem;
+
+  @include g.mq() {
+    font-size: 16rem;
+
+    &--product {
+      width: 224rem;
+    }
+  }
+
+  &--news {
+    font-family: var(--font-family-en);
+    font-size: 17rem;
+    font-weight: 400;
+    line-height: 1.176;
+    @include g.mq() {
+      width: 120rem;
+      padding: 5rem 0;
+    }
+  }
+}
+
+.c-table-data {
+  font-size: 15rem;
+  font-weight: 500;
+  line-height: 1.9;
+  @include g.mq() {
+    font-size: 16rem;
+  }
+
+  &--large {
+    font-size: 16rem;
+    line-height: 1.5;
+    @include g.mq() {
+      line-height: 1.9;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "・";
+      width: 15rem;
+      height: 26rem;
+    }
+  }
+}

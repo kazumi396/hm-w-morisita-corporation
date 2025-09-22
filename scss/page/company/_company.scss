@@ -1,0 +1,24 @@
+@use "../../global" as g;
+
+/*!
+page > company
+------------------------------
+*/
+
+.company-image {
+  width: 100%;
+  aspect-ratio: 340 / 226;
+  object-fit: cover;
+  border-bottom-left-radius: 32rem;
+  @include g.mq() {
+    aspect-ratio: 2 / 1;
+    border-bottom-left-radius: 56rem;
+  }
+}
+
+.company-table-wrap {
+  margin-top: 40rem;
+  @include g.mq() {
+    margin-top: 56rem;
+  }
+}

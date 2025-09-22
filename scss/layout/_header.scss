@@ -1,0 +1,481 @@
+@use "../global" as g;
+
+/*!
+layout > header
+------------------------------
+*/
+/* ====================================
+ベースヘッダースタイル
+==================================== */
+.l-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+  width: 100%;
+  z-index: var(--z-index-modal);
+}
+
+.l-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rem 0 8rem 0;
+  @include g.mq() {
+    padding: 48rem 0 0 0;
+  }
+}
+
+/* ====================================
+   ロゴ
+==================================== */
+.l-header-logo {
+  display: flex;
+
+  a {
+    display: flex;
+  }
+
+  img {
+    width: 160rem;
+    aspect-ratio: 160 / 48;
+    object-fit: contain;
+    @include g.mq() {
+      width: 247rem;
+      aspect-ratio: 247 / 74;
+    }
+  }
+}
+
+/* デフォルト：カラーロゴを表示 */
+.l-header-logo {
+  .logo-image--white {
+    display: none;
+  }
+  .logo-image--color {
+    display: inline;
+  }
+}
+
+/* トップページ：白ロゴを表示 */
+.l-header--top .l-header-logo {
+  .logo-image--white {
+    display: inline;
+  }
+  .logo-image--color {
+    display: none;
+  }
+}
+
+/* トップページでも固定時：カラーロゴに切り替え */
+.l-header--top.is-fixed .l-header-logo {
+  .logo-image--white {
+    display: none;
+  }
+  .logo-image--color {
+    display: inline;
+  }
+}
+
+/* ====================================
+   メニュー基本スタイル
+==================================== */
+.l-header-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 32rem 20rem 72rem 20rem;
+  background-color: var(--color-bg-base);
+  @include g.mq() {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    margin-inline: initial;
+  }
+}
+
+.l-header-menu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include g.mq() {
+    display: none;
+  }
+}
+
+.l-header-menu-logo {
+  width: 160rem;
+  aspect-ratio: 160 / 48;
+}
+
+.l-header-menu-close-button {
+  @include g.mq() {
+    display: none;
+  }
+}
+
+.l-header-nav {
+  color: var(--color-white);
+  margin-top: 64rem;
+  width: 296rem;
+  @include g.mq() {
+    color: var(--color-font-base);
+    margin-top: 0;
+    width: auto;
+  }
+}
+
+.l-header-nav-list {
+  display: flex;
+  flex-direction: column;
+  @include g.mq() {
+    flex-direction: row;
+    gap: 40rem;
+  }
+}
+
+.l-header-nav-item {
+  padding: 20rem 16rem;
+  border-bottom: 1px solid rgba(256, 256, 256, 0.2);
+  &:first-child {
+    border-top: 1px solid rgba(256, 256, 256, 0.2);
+  }
+  @include g.mq() {
+    padding: 0;
+    border: none;
+    &:first-child {
+      border-top: none;
+      .l-header-nav-text-en {
+        display: block;
+        font-family: var(--font-family-base);
+        font-size: 16rem;
+        line-height: 1.9;
+      }
+      .l-header-nav-text-ja {
+        display: none;
+      }
+    }
+  }
+}
+
+.l-header-nav-item {
+  a[href="contact.html"]::after {
+    display: none;
+  }
+}
+
+.l-header-nav-text-en {
+  font-family: var(--font-family-en);
+  font-size: 24rem;
+  line-height: 1.17;
+  text-transform: uppercase;
+
+  @include g.mq() {
+    display: none;
+  }
+}
+
+.l-header-nav-text-ja {
+  font-size: 16rem;
+  margin-left: 8rem;
+  line-height: 1.147;
+  @include g.mq() {
+    font-size: 16rem;
+    margin-left: 0;
+    line-height: 1.9;
+  }
+}
+
+.l-header-nav-text-ja--business {
+  display: flex;
+  align-items: center;
+  gap: 9rem;
+  @include g.mq() {
+    gap: 0;
+  }
+
+  span {
+    display: none;
+    @include g.mq() {
+      display: block;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.l-header-menu-open-button {
+  @include g.mq() {
+    display: none;
+  }
+}
+
+/* ====================================
+   2. トップページ用 --top
+==================================== */
+.l-header--top {
+  background: transparent;
+  color: var(--color-white);
+
+  .l-header-nav-text-ja {
+    color: var(--color-white);
+  }
+
+  .l-header-nav-item {
+    a,
+    button {
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+
+    &:first-child .l-header-nav-text-en {
+      color: var(--color-white);
+    }
+  }
+}
+
+/* ====================================
+    3. 下層ページ用 --sub
+==================================== */
+.l-header--sub {
+  background-color: var(--color-bg-lightest-blue);
+  color: var(--color-font-base);
+
+  .l-header-nav-item {
+    a,
+    button {
+      &::after {
+        background-color: var(--color-font-base);
+      }
+    }
+  }
+}
+
+.l-header--sub {
+  @include g.mq() {
+  }
+  .l-header-nav-item-business {
+    .l-header-nav-text-ja {
+      color: var(--color-font-base);
+    }
+  }
+}
+
+/* ====================================
+    4. 固定時 .is-fixed
+==================================== */
+.l-header.is-fixed {
+  position: fixed;
+  top: -122rem;
+  background-color: var(--color-bg-lightest-blue);
+  color: var(--color-font-base);
+}
+
+.l-header.is-fixed.l-header--top .l-header-nav-text-ja {
+  @include g.mq() {
+    color: var(--color-font-base);
+  }
+}
+
+.l-header.is-fixed.l-header--top .l-header-nav-icon {
+  @include g.mq() {
+    background-color: var(--color-font-base);
+  }
+}
+
+.l-header.is-fixed.l-header--top .l-header-nav-text-ja--contact {
+  color: var(--color-white);
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-font-primary);
+    }
+  }
+}
+
+/* ====================================
+    4. buisness用 --business
+==================================== */
+.l-header-nav-item--business {
+  padding: 20rem 0 0 0;
+  @include g.mq() {
+    padding: 0;
+  }
+
+  button {
+    display: flex;
+    padding-left: 16rem;
+    @include g.mq() {
+      padding-left: 0;
+      padding-bottom: 0;
+    }
+
+    .l-header-nav-text-ja {
+      display: grid;
+      grid-template-columns: 1fr 18rem;
+      align-items: center;
+      position: relative;
+      height: 28rem;
+      color: var(--color-white);
+      padding-left: 0;
+    }
+
+    @include g.mq() {
+      .l-header--sub &,
+      .l-header.is-fixed & {
+        .l-header-nav-text-ja {
+          color: var(--color-font-base);
+        }
+        .l-header-nav-icon {
+          background-color: var(--color-font-base);
+        }
+      }
+    }
+  }
+
+  .l-header-nav-icon,
+  .l-header-nav-item02-icon {
+    display: block;
+    width: 7rem;
+    height: 8rem;
+    mask-image: url(../img/icon-button-arrow.svg);
+    mask-position: center;
+    mask-size: cover;
+    background-color: var(--color-white);
+    margin-right: 16rem;
+  }
+
+  .l-header-nav-icon {
+    display: none;
+    @include g.mq() {
+      display: block;
+      margin-right: 0;
+      margin-left: 9rem;
+    }
+  }
+
+  .l-header-nav-sub {
+    position: relative;
+  }
+
+  .l-header-nav-list02 {
+    margin-top: 20rem;
+    display: block;
+    @include g.mq() {
+      display: none;
+      &.is-open {
+        position: absolute;
+        display: block;
+        margin-top: 10rem;
+        padding: 8rem;
+        position: absolute;
+        left: -115rem;
+        min-width: 312rem;
+        background-color: var(--color-bg-base);
+        color: var(--color-white);
+        border-radius: 16rem;
+        box-shadow: 0 4rem 32rem rgba(0, 0, 0, 0.08), 0 4rem 16rem rgba(0, 0, 0, 0.1);
+
+        .l-header-nav-item02 {
+          &:first-child {
+            border-top: none;
+          }
+        }
+      }
+    }
+  }
+
+  .l-header-nav-item02 {
+    padding: 15rem 0;
+    border-bottom: 1px solid rgba(256, 256, 256, 0.2);
+    font-size: 14rem;
+    letter-spacing: 0.05em;
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 16rem;
+      max-width: 296rem;
+    }
+    &:first-child {
+      border-top: 1px solid rgba(256, 256, 256, 0.2);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+/* ====================================
+    ホバー効果統一
+==================================== */
+.l-header-nav-item {
+  a,
+  button {
+    position: relative;
+
+    @include g.mq() {
+      padding-bottom: 3rem;
+    }
+
+    &::after {
+      opacity: 0.8;
+      content: "";
+      width: 100%;
+      height: 0.5px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform-origin: left top;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover::after {
+        transform-origin: left top;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  a[href*="contact"]::after {
+    display: none;
+  }
+}
+
+.l-header-nav-item--business {
+  a {
+    &::after {
+      @include g.mq() {
+        display: none;
+      }
+    }
+  }
+}
+
+/* ====================================
+    4. contact用 --contact
+==================================== */
+.l-header-nav-text-ja--contact {
+  @include g.mq() {
+    color: var(--color-white);
+    background-color: var(--color-bg-base);
+    padding: 12rem 30rem;
+    border-radius: 56rem;
+    border: 1px solid var(--color-bg-base);
+    transition: all 0.3s ease-out;
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--color-font-primary);
+        background-color: var(--color-white);
+        border: 1px solid var(--color-bg-base);
+      }
+    }
+  }
+}

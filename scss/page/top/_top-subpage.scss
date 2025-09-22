@@ -1,0 +1,98 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-subpage
+------------------------------
+*/
+.top-subpage {
+  padding: 80rem 20rem;
+  @include g.mq() {
+    padding: 80rem 70rem;
+  }
+}
+
+.top-subpage-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include g.mq() {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 16rem;
+  }
+}
+
+.top-subpage-item {
+  padding: 0 16rem;
+  transition: all 0.3s ease;
+  @include g.mq() {
+    padding: 0;
+    &:first-child {
+      padding-top: 16rem;
+    }
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 31rem;
+    border-bottom: 1px solid var(--color-bg-light-grey);
+    @include g.mq() {
+      padding-bottom: 0;
+      padding-right: 46rem;
+      border-bottom: none;
+      border-right: 1px solid var(--color-bg-light-grey);
+    }
+  }
+
+  &:not(:first-child) {
+    padding-top: 32rem;
+    @include g.mq() {
+      padding-top: 16rem;
+      padding-left: 46rem;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .c-button-icon {
+        background-color: var(--color-bg-white);
+      }
+
+      .top-subpage-button {
+        background-color: var(--color-bg-base);
+      }
+    }
+  }
+}
+
+.top-subpage-item a {
+  @include g.mq() {
+    padding: 16rem 0;
+  }
+}
+
+.top-subpage-text {
+  @include g.mq() {
+    width: 372rem;
+  }
+
+  p {
+    line-height: 1.9;
+    margin-top: 16rem;
+    @include g.mq() {
+      margin-top: 32rem;
+    }
+  }
+}
+
+.top-subpage-button {
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transition: background-color 0.3s;
+
+  @include g.mq() {
+    margin: 32rem 0 0 auto;
+  }
+}

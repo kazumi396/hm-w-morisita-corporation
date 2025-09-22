@@ -1,0 +1,121 @@
+@use "../global" as g;
+
+/*!
+component > title
+------------------------------
+*/
+.c-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  text-transform: uppercase;
+  @include g.mq() {
+    gap: 16rem;
+  }
+
+  &--single {
+    flex-direction: row;
+    gap: 8rem;
+  }
+
+  &--error {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.c-title-en {
+  font-family: var(--font-family-en);
+  font-size: 50rem;
+  font-weight: 400;
+  line-height: 1.16;
+  color: var(--color-font-primary);
+  @include g.mq() {
+    font-size: 72rem;
+  }
+
+  &--single {
+    font-size: 20rem;
+    @include g.mq() {
+      font-size: 24rem;
+    }
+  }
+}
+
+.c-title-ja {
+  font-family: var(--font-family-ja);
+  font-size: 15rem;
+  font-weight: 500;
+  color: var(--color-font-base);
+  @include g.mq() {
+    font-size: 18rem;
+    letter-spacing: 0.05em;
+  }
+
+  &--light {
+    color: var(--color-font-light-base);
+  }
+
+  &--404 {
+    font-size: 20rem;
+    font-weight: 700;
+    @include g.mq() {
+      font-size: 32rem;
+    }
+  }
+}
+
+.c-top-title {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8rem;
+}
+
+.c-top-title-en {
+  font-size: 20rem;
+  line-height: 1.15;
+}
+
+.c-top-title-ja {
+  font-size: 15rem;
+}
+
+.c-top-catchcopy {
+  margin-top: 8rem;
+  font-size: 28rem;
+  letter-spacing: 0.05em;
+  line-height: 1.46;
+  @include g.mq() {
+    margin-top: 16rem;
+    font-size: 32rem;
+    line-height: 1.44;
+  }
+}
+
+.c-top-message {
+  margin-top: 40rem;
+  line-height: 1.9;
+
+  @include g.mq() {
+    margin-top: 40rem;
+  }
+  span {
+    display: block;
+  }
+}
+
+// singleページのみ（日付ありの場合）
+.c-title-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-title-date {
+  font-family: var(--font-family-en);
+  font-size: 17rem;
+  color: var(--color-font-black);
+  font-weight: 400;
+  line-height: 1.18;
+}

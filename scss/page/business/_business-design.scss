@@ -1,0 +1,56 @@
+@use "../../global" as g;
+
+/*!
+page > business-design
+------------------------------
+*/
+.business-design-wrapper {
+  margin-top: -8rem;
+  @include g.mq() {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 240rem 1fr;
+    gap: 155rem;
+  }
+}
+
+.c-business-design-problem-list {
+  margin-top: 24rem;
+  background-color: var(--color-bg-lightest-blue);
+  padding: 32rem 20rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24rem;
+  @include g.mq() {
+    padding: 48rem 40rem;
+  }
+}
+
+.business-design-feature-list,
+.business-design-flow-list {
+  margin-top: 24rem;
+  display: flex;
+  flex-direction: column;
+  @include g.mq() {
+    margin-top: 32rem;
+  }
+}
+
+.business-design-feature-list {
+  gap: 24rem;
+}
+
+.business-design-flow-list {
+  gap: 32rem;
+  @include g.mq() {
+    gap: 24rem;
+  }
+}
+
+.business-design-sidebar {
+  display: none;
+  @include g.mq() {
+    display: flex;
+    order: -1;
+  }
+}

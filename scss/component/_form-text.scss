@@ -1,0 +1,32 @@
+@use "../global" as g;
+
+/*!
+component > form-text
+------------------------------
+*/
+.c-form-text {
+  padding: 16rem;
+  outline: none;
+  width: 100%;
+  background-color: var(--color-bg-lightest-blue);
+  border-radius: 4rem;
+  border: 1rem solid transparent;
+  @include g.mq() {
+    height: 55rem;
+  }
+
+  &::placeholder {
+    opacity: 0.6;
+  }
+  &:focus {
+    border: 1rem solid var(--color-other-link);
+  }
+  &--textarea {
+    field-sizing: content;
+    height: auto;
+    min-height: 120rem;
+    @include g.mq() {
+      min-height: 160rem;
+    }
+  }
+}

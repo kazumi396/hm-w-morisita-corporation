@@ -1,0 +1,38 @@
+/*!
+global > color
+------------------------------
+*/
+:root {
+  --color-white: #ffffff;
+
+  // font
+  --color-font-base: #49515f;
+  --color-font-light-base: #9a9eac;
+  --color-font-primary: #1e4aa4;
+  --color-font-required: #c82b2b;
+  --color-font-black: #333333;
+
+  // bg
+  --color-bg-base: #1e4aa4;
+  --color-bg-darkblue: #222a38;
+  --color-bg-cta: linear-gradient(to right, #0772d1, #254da0);
+  --color-bg-lightest-blue: #f5f8fb;
+  --color-bg-light-grey: #eaecef;
+  --color-bg-white: #ffffff;
+  --color-bg-white-transparent: rgba(255, 255, 255, 0.2);
+  --color-bg-header: linear-gradient(0deg, rgba(39, 56, 78, 0) 0%, rgba(39, 56, 78, 0.3) 100%);
+  --color-bg-error: #fddede;
+
+  //   other
+  --color-other-logo: #06235e;
+  --color-other-logo-02: #e5ebf0;
+  --color-other-link: #497fdf;
+  --color-other-bg-overlay: linear-gradient(180deg, rgba(0, 20, 61, 0) 0%, rgba(0, 20, 61, 0.7) 100%);
+  --color-other-border-product: #dcdcdc;
+  --color-other-border-s-product: #dadada;
+  --color-other-border-error: #c82b2b;
+
+  //   separator
+  --color-sep-gray-333-10: rgba(51, 51, 51, 0.1);
+  --color-sep-light-gray: #eeeeee;
+}
