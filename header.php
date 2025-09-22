@@ -40,9 +40,6 @@
         type="module">
     </script>
 
-    <!-- noindex -->
-    <meta name="robots" content="noindex" />
-
     <?php wp_head(); ?>
 </head>
 

@@ -68,7 +68,7 @@ Figma のデザインカンプをもとに、**レスポンシブ対応の静的
 ## 開発環境
 
 - エディタ：Cursor
-- ローカル環境：XAMPP / MAMP / Local by Flywheel など（使用ツールを記載）
+- ローカル環境：Local（by Flywheel）
 
 ## 補足
 
